@@ -27,7 +27,8 @@ install:
 	mkdir -m 0755 -p $(DESTDIR)/usr/share
 	cp -pPR $(SHARE_DIRS) $(DESTDIR)/usr/share
 	# no secrets in our shadow or sudoers but this is the proper way
-	chmod 0640 $(DESTDIR)/usr/share/sudoers.d/*
+	chmod 0750 $(DESTDIR)/usr/share/sudoers.d
+	chmod 0440 $(DESTDIR)/usr/share/sudoers.d/*
 	chmod 0640 $(DESTDIR)/usr/share/baselayout/*shadow
 	# created by systemd's tmpfiles.d/tmp.conf but that is installed later
 	install -m 1777 -d $(DESTDIR)/tmp $(DESTDIR)/var/tmp
