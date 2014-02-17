@@ -25,7 +25,8 @@ users:x:100:
 messagebus:x:201:
 syslog:x:202:
 ntp:x:203:
-tcpdump:x:203:
+sshd:x:204:
+tcpdump:x:215:
 dhcp:x:224:
 etcd:x:232:
 docker:x:233:core
