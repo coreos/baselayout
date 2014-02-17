@@ -18,6 +18,7 @@ audio:x:18:
 cdrom:x:19:
 tape:x:26:root
 video:x:27:root
+kvm:x:78:
 cdrw:x:80:
 usb:x:85:
 users:x:100:
