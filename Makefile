@@ -4,7 +4,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 DESTDIR =
-ETC_DIRS = env.d
+ETC_DIRS = env.d portage
 LIB_DIRS = modprobe.d sysctl.d tmpfiles.d
 SHARE_DIRS = baselayout sudoers.d vim
 
