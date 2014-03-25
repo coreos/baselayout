@@ -1,0 +1,12 @@
+## Default sudoers for CoreOS
+
+## enable root and wheel
+root ALL=(ALL) ALL
+%wheel ALL=(ALL) ALL
+
+## the core user has no password by default
+core ALL=(ALL) NOPASSWD: ALL
+
+## Read drop-in files from /etc/sudoers.d
+## (the '#' here does not indicate a comment)
+#includedir /etc/sudoers.d

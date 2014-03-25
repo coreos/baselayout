@@ -6,7 +6,7 @@
 DESTDIR =
 ETC_DIRS = env.d
 LIB_DIRS = modprobe.d sysctl.d tmpfiles.d
-SHARE_DIRS = baselayout sudoers.d vim
+SHARE_DIRS = baselayout vim
 
 all: baselayout/shadow baselayout/gshadow
 
@@ -27,8 +27,7 @@ install:
 	mkdir -m 0755 -p $(DESTDIR)/usr/share
 	cp -PR $(SHARE_DIRS) $(DESTDIR)/usr/share
 	# no secrets in our shadow or sudoers but this is the proper way
-	chmod 0750 $(DESTDIR)/usr/share/sudoers.d
-	chmod 0440 $(DESTDIR)/usr/share/sudoers.d/*
+	chmod 0440 $(DESTDIR)/usr/share/baselayout/sudoers
 	chmod 0640 $(DESTDIR)/usr/share/baselayout/*shadow
 	# created by systemd's tmpfiles.d/tmp.conf but that is installed later
 	mkdir -m 1777 -p $(DESTDIR)/tmp $(DESTDIR)/var/tmp
