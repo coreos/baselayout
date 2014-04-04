@@ -4,6 +4,9 @@
 root ALL=(ALL) ALL
 %wheel ALL=(ALL) ALL
 
+## enable passwordless access for sudo
+%sudo ALL=(ALL) NOPASSWD: ALL
+
 ## the core user has no password by default
 core ALL=(ALL) NOPASSWD: ALL
 
