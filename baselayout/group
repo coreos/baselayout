@@ -22,6 +22,7 @@ kvm:x:78:
 cdrw:x:80:
 usb:x:85:
 users:x:100:
+sudo:x:150:
 messagebus:x:201:
 syslog:x:202:
 ntp:x:203:
