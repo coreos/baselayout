@@ -32,6 +32,7 @@ dhcp:x:224:
 etcd:x:232:
 docker:x:233:core
 tlsdate:x:234:
+systemd-journal-gateway:x:247:
 systemd-journal:x:248:core
 dialout:x:249:
 portage:x:250:core
