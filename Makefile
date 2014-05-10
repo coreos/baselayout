@@ -33,5 +33,7 @@ install:
 	mkdir -m 1777 -p $(DESTDIR)/tmp $(DESTDIR)/var/tmp
 	# FHS compatibility symlinks stuff
 	ln -snf /var/tmp $(DESTDIR)/usr/tmp
+	# backwards compatibility for /etc/motd
+	ln -snf /run/coreos/motd $(DESTDIR)/usr/share/baselayout/motd
 
 .PHONY: all clean install
