@@ -34,6 +34,7 @@ dhcp:x:224:
 etcd:x:232:
 docker:x:233:core
 tlsdate:x:234:
+polkitd:x:235:
 systemd-timesync:x:243:
 systemd-network:x:244:
 systemd-resolve:x:245:
