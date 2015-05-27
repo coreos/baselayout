@@ -1,5 +1,9 @@
 ## Default sudoers for CoreOS
 
+## Pass LESSCHARSET through for systemd commands run through sudo that call less.
+## See https://github.com/coreos/bugs/issues/365.
+Defaults env_keep += "LESSCHARSET"
+
 ## enable root and wheel
 root ALL=(ALL) ALL
 %wheel ALL=(ALL) ALL
