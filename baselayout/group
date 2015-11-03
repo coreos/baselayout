@@ -42,7 +42,7 @@ systemd-network:x:244:
 systemd-resolve:x:245:
 systemd-bus-proxy:x:246:
 systemd-journal-gateway:x:247:
-systemd-journal:x:248:core
+systemd-journal:x:248:core,systemd-journal-upload
 dialout:x:249:
 portage:x:250:core
 rkt:x:251:core
