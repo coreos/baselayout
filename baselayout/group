@@ -46,6 +46,7 @@ systemd-journal:x:248:core
 dialout:x:249:
 portage:x:250:core
 rkt:x:251:core
+tss:x:252:tss
 utmp:x:406:
 core:x:500:
 nogroup:x:65533:
