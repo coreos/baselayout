@@ -10,7 +10,7 @@ BASE="${ROOT}/usr/share/baselayout"
 
 # Users/Groups to copy so they can be modified
 COPY_USERS="root|core"
-COPY_GROUPS="docker|rkt|sudo|wheel"
+COPY_GROUPS="docker|sudo|wheel"
 
 # readable files
 umask 022
