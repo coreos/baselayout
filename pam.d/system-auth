@@ -7,7 +7,7 @@ account		required	pam_unix.so
 account		sufficient	pam_sss.so
 account		optional	pam_permit.so
 
-password	sufficient	pam_unix.so try_first_pass  nullok sha512 shadow
+password	sufficient	pam_unix.so try_first_pass nullok sha512 shadow minlen=8
 password	sufficient	pam_sss.so use_authtok
 password	required	pam_deny.so
 
