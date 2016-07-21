@@ -1,10 +1,7 @@
 # /etc/shells: valid login shells
 /bin/bash
-/bin/csh
-/bin/esh
-/bin/fish
-/bin/ksh
-/bin/sash
 /bin/sh
-/bin/tcsh
-/bin/zsh
+/sbin/nologin
+/usr/bin/bash
+/usr/bin/sh
+/usr/sbin/nologin
