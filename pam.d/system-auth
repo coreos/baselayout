@@ -4,7 +4,8 @@ auth		sufficient	pam_unix.so try_first_pass likeauth nullok
 auth		required	pam_deny.so
 
 account		required	pam_unix.so
-account		sufficient	pam_sss.so
+# Don't fail if the user is unknown to sssd or if sssd isn't running
+account		required	pam_sss.so ignore_unknown_user ignore_authinfo_unavail
 account		optional	pam_permit.so
 
 password	sufficient	pam_unix.so try_first_pass  nullok sha512 shadow
