@@ -1,5 +1,4 @@
 auth		required	pam_tally2.so onerr=succeed
-auth		required	pam_shells.so
 auth		required	pam_nologin.so
 auth		include		system-auth
  				
