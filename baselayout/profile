@@ -22,7 +22,7 @@ umask 022
 
 # Set up PATH, all users get both bin and sbin to keep things simple.
 # Gentoo normally splits this up which is why the variable is called ROOTPATH
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin${ROOTPATH:+:}${ROOTPATH-}"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin${ROOTPATH:+:}${ROOTPATH-}"
 unset ROOTPATH
 
 if [ -n "${BASH_VERSION-}" ] ; then
