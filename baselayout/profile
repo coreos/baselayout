@@ -22,10 +22,10 @@ umask 022
 
 # Set up PATH, all users get both bin and sbin to keep things simple.
 # Gentoo normally splits this up which is why the variable is called ROOTPATH
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:${ROOTPATH}"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin${ROOTPATH:+:}${ROOTPATH-}"
 unset ROOTPATH
 
-if [ -n "${BASH_VERSION}" ] ; then
+if [ -n "${BASH_VERSION-}" ] ; then
 	# Newer bash ebuilds include /etc/bash/bashrc which will setup PS1
 	# including color.  We leave out color here because not all
 	# terminals support it.
@@ -49,7 +49,6 @@ else
 	# understand sequences such as \h, don't put anything special in it.
 	PS1="${USER:-$(whoami 2>/dev/null)}@$(uname -n 2>/dev/null) \$ "
 fi
-
 
 for sh in /usr/share/profile.d/*.sh ; do
 	[ -r "$sh" ] && . "$sh"

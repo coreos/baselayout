@@ -701,6 +701,8 @@ concurrent-lm	1648/tcp
 concurrent-lm	1648/udp
 kermit		1649/tcp
 kermit		1649/udp
+groupwise	1677/tcp
+groupwise	1677/udp
 l2tp		1701/tcp
 l2tp		1701/udp
 h323gatedisc	1718/tcp
@@ -755,8 +757,8 @@ x25-svc-port	1998/tcp			# cisco X.25 service (XOT)
 x25-svc-port	1998/udp
 tcp-id-port	1999/tcp			# cisco identification port
 tcp-id-port	1999/udp
-cisco-sccp	2000/tcp	sieve		# Cisco SCCP
-cisco-sccp	2000/udp	sieve
+cisco-sccp	2000/tcp			# Cisco SCCP
+cisco-sccp	2000/udp
 nfs		2049/tcp			# Network File System
 nfs		2049/udp
 radsec		2083/tcp			# Secure Radius Service
@@ -915,6 +917,8 @@ xgrid		4111/tcp			# Mac OS X Server Xgrid
 xgrid		4111/udp
 bzr		4155/tcp			# Bazaar Version Control System
 bzr		4155/udp			# Bazaar version control system
+sieve		4190/tcp			# ManageSieve Protocol
+sieve		4190/udp
 rwhois		4321/tcp			# Remote Who Is
 rwhois		4321/udp
 epmd		4369/tcp			# Erlang Port Mapper Daemon
@@ -1149,9 +1153,12 @@ support		1529/tcp			# GNATS
 cfinger		2003/tcp	lmtp		# GNU Finger
 ninstall	2150/tcp			# ninstall service
 ninstall	2150/udp
+gpsd		2947/tcp	gpsd		# GPS Daemon request/response protocol
+gpsd		2947/udp	gpsd		# GPS Daemon request/response protocol
 afbackup	2988/tcp			# Afbackup system
 afbackup	2988/udp
 fax		4557/tcp			# FAX transmission service        (old)
+xmpp-bosh   5280/tcp	 		# Bidirectional-streams Over Synchronous HTTP (BOSH)
 rplay		5555/tcp			# RPlay audio service
 rplay		5555/udp
 canna		5680/tcp			# Canna (Japanese Input)
@@ -1159,6 +1166,7 @@ x11-ssh		6010/tcp	x11-ssh-offset
 x11-ssh		6010/udp	x11-ssh-offset
 ircd		6667/tcp			# Internet Relay Chat
 ircd		6667/udp
+ircs-u		6697/tcp			# Internet Relay Chat via TLS/SSL
 jetdirect	9100/tcp			# HP JetDirect card
 jetdirect	9100/udp
 mandelspawn	9359/udp	mandelbrot	# network mandelbrot
