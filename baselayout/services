@@ -803,6 +803,8 @@ redstorm_find	2347/tcp			# Game Announcement and Location
 redstorm_find	2347/udp
 redstorm_info	2348/tcp			# Information to query for game status
 redstorm_info	2348/udp
+etcd-client	2379/tcp			# etcd client communication
+etcd-server	2380/tcp			# etcd server to server communication
 cvspserver	2401/tcp			# CVS client/server operations
 cvspserver	2401/udp
 venus		2430/tcp			# codacon port
