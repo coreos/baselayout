@@ -11,6 +11,12 @@
 #  The readline entry to make this skip back a word will then be:
 #    "\e[1;3D" backward-word
 #
+# Customization note:
+#  You don't need to put all your changes in this file.  You can create
+#  ~/.inputrc which starts off with the line:
+#    $include /etc/inputrc
+#  Then put all your own stuff after that.
+#
 
 # do not bell on tab-completion
 #set bell-style none
@@ -53,6 +59,9 @@ $if mode=emacs
 # konsole (alt + arrow key)
 "\e[1;3C": forward-word
 "\e[1;3D": backward-word
+
+# Chromebooks remap alt + backspace so provide alternative (alt + k)
+"\ek": backward-kill-word
 
 $if term=rxvt
 "\e[8~": end-of-line
