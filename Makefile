@@ -5,7 +5,7 @@
 
 DESTDIR =
 ETC_DIRS = env.d
-LIB_DIRS = modprobe.d pam.d sysctl.d tmpfiles.d systemd
+LIB_DIRS = modprobe.d pam.d sysctl.d tmpfiles.d systemd sysusers.d
 SHARE_DIRS = baselayout vim
 
 all: baselayout/shadow baselayout/gshadow
