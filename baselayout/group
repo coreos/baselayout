@@ -35,14 +35,11 @@ etcd:x:232:
 docker:x:233:core
 tlsdate:x:234:
 polkitd:x:235:
-systemd-journal-upload:x:241:
 systemd-journal-remote:x:242:
-systemd-timesync:x:243:
 systemd-network:x:244:
 systemd-resolve:x:245:
 systemd-bus-proxy:x:246:
-systemd-journal-gateway:x:247:
-systemd-journal:x:248:core,systemd-journal-upload
+systemd-journal:x:248:core
 dialout:x:249:
 portage:x:250:core
 tss:x:252:tss
