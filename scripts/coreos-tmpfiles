@@ -16,16 +16,32 @@ COPY_GROUPS="docker|sudo|wheel"
 umask 022
 if [[ ! -e "${ROOT}/etc/passwd" ]]; then
     grep -E -e "^(${COPY_USERS}):" "${BASE}/passwd" > "${ROOT}/etc/passwd"
+else
+    # Append users
+    grep -Fxv -f "${ROOT}/etc/passwd" "${BASE}/passwd" | grep -E -e "^(${COPY_USERS}):" >> "${ROOT}/etc/passwd" || true
 fi
 if [[ ! -e "${ROOT}/etc/group" ]]; then
     grep -E -e "^(${COPY_GROUPS}):" "${BASE}/group" > "${ROOT}/etc/group"
+else
+    # Append groups and take into consideration existing users in groups
+    for i in $(grep -Fxv -f "${ROOT}/etc/group" "${BASE}/group" | grep -E -e "^(${COPY_GROUPS}):"); do
+        grep -Fq "$i" "${ROOT}/etc/group" || echo "$i" >> "${ROOT}/etc/group"
+    done
 fi
 
 # secure files
 umask 027
 if [[ ! -e "${ROOT}/etc/shadow" ]]; then
     grep -E -e "^(${COPY_USERS}):" "${BASE}/shadow" > "${ROOT}/etc/shadow"
+else
+    # Append users
+    grep -Fxv -f "${ROOT}/etc/shadow" "${BASE}/shadow" | grep -E -e "^(${COPY_USERS}):" >> "${ROOT}/etc/shadow" || true
 fi
 if [[ ! -e "${ROOT}/etc/gshadow" ]]; then
     grep -E -e "^(${COPY_GROUPS}):" "${BASE}/gshadow" > "${ROOT}/etc/gshadow"
+else
+    # Append groups and take into consideration existing users in groups
+    for i in $(grep -Fxv -f "${ROOT}/etc/gshadow" "${BASE}/gshadow" | grep -E -e "^(${COPY_GROUPS}):"); do
+        grep -Fq "$i" "${ROOT}/etc/gshadow" || echo "$i" >> "${ROOT}/etc/gshadow"
+    done
 fi
